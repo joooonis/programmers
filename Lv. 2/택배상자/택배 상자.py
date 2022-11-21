@@ -1,14 +1,10 @@
-from collections import deque
-
-
 def solution(order):
     answer = 0
-    container = deque([i+1 for i in range(len(order))])
-
+    container = 1
     stack = []
 
     for target in order:
-        if target not in container and stack[-1] != target:
+        if target < container and stack[-1] != target:
             break
 
         if stack:
@@ -17,11 +13,12 @@ def solution(order):
                 answer += 1
                 continue
 
-        while container[0] != target:
-            stack.append(container.popleft())
+        while container != target:
+            stack.append(container)
+            container += 1
 
-        if container[0] == target:
-            container.popleft()
+        if container == target:
+            container += 1
             answer += 1
 
     return answer
