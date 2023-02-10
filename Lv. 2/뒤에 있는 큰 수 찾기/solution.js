@@ -26,3 +26,20 @@ function solution(numbers) {
   }
   return result;
 }
+
+function solution(numbers) {
+  let result = [];
+  let stack = [];
+  for (let i = numbers.length - 1; i >= 0; i--) {
+    while (stack.length && stack[stack.length - 1] <= numbers[i]) {
+      stack.pop();
+    }
+    if (stack.length === 0) {
+      result.push(-1);
+    } else {
+      result.push(stack[stack.length - 1]);
+    }
+    stack.push(numbers[i]);
+  }
+  return result.reverse();
+}
