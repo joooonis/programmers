@@ -67,3 +67,41 @@ function solution(n, k, enemy) {
   }
   return answer;
 }
+
+// refactoring by ChatGPT
+function solution(n, k, enemy) {
+  const pq = new PriorityQueue();
+  let answer = 0;
+
+  while (enemy.length > 0) {
+    const e = enemy.shift();
+
+    if (n >= e) {
+      n -= e;
+      pq.enqueue(e, e);
+      answer++;
+    } else {
+      if (pq.isEmpty() && k > 0) {
+        k--;
+        answer++;
+        continue;
+      }
+
+      if (k <= 0) {
+        break;
+      }
+
+      k--;
+      answer++;
+
+      const max = pq.peek();
+      if (max > e) {
+        pq.dequeue();
+        pq.enqueue(e, e);
+        n += max - e;
+      }
+    }
+  }
+
+  return answer;
+}
