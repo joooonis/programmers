@@ -2,7 +2,7 @@
 
 아래 코드에서는 memoization 방식을 사용하여 이전에 계산한 값을 저장해두고, 이를 이용해 새로운 값을 계산합니다.
 
-```javascipt
+```javascript
 function fibonacci(n) {
   if (n <= 1) {
     return n;
