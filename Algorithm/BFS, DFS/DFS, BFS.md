@@ -8,6 +8,8 @@
 
 # 그래프 탐색
 
+## 스택으로 구현
+
 ```javascript
 function dfs(graph, start) {
   let visited = [];
@@ -39,6 +41,32 @@ const graph = {
 };
 
 console.log(dfs(graph, 1)); // [1, 4, 6, 2, 5, 8, 7, 3]
+```
+
+## 재귀로 구현
+
+```javascript
+function dfs(start, graph, visited) {
+  visited[start] = true;
+  for (let node of graph[start]) {
+    if (!visited[node]) {
+      dfs(node, graph, visited);
+    }
+  }
+}
+
+// 예시
+const graph = {
+  1: [2, 3],
+  2: [1, 4, 5],
+  3: [1, 6],
+  4: [2],
+  5: [2, 6],
+  6: [3, 5],
+};
+
+const visited = new Array(Object.keys(graph).length + 1).fill(false); // visited 배열 초기화
+dfs(1, graph, visited);
 ```
 
 ```javascript
