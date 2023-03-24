@@ -1,8 +1,6 @@
 # 문제
 
-시소짝꿍
-
-https://school.programmers.co.kr/learn/courses/30/lessons/152996
+[시소짝꿍](https://school.programmers.co.kr/learn/courses/30/lessons/152996)
 
 # 코드
 
