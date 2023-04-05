@@ -16,7 +16,7 @@ function getSumInRange(prefixSumArray, start, end) {
 
 const arr = [1, 2, 3, 4, 5];
 const prefixSumArray = prefixSum(arr); // [0, 1, 3, 6, 10, 15]
-console.log(getSumInRange(prefixSumArray, 0, 4)); // 9
+console.log(getSumInRange(prefixSumArray, 0, 4)); // 15
 
 // 3. Prefix Sum for two dimension array
 // prefixSum[i][j] means the sum of arr[0][0] ~ arr[i - 1][j - 1]
