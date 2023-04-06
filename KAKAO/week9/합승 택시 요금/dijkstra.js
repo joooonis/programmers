@@ -35,6 +35,7 @@ function solution(n, s, a, b, fares) {
 }
 
 function dijkstra(graph, start) {
+  // graph: 인접 리스트
   const distances = {};
   for (const node in graph) {
     distances[node] = Infinity;
