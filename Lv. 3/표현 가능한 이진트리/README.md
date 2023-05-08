@@ -37,7 +37,7 @@ function wow(binary) {
 function isHeight(n) {
   if (n === 1) return true;
   if (n % 2 === 0) return false;
-  return isHeightNumber(Math.floor(n / 2));
+  return isHeight(Math.floor(n / 2));
 }
 ```
 
