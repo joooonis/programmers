@@ -4,7 +4,7 @@
 
 # 코드
 
-````javascript
+```javascript
 function solution(n, edge) {
   var distances = [];
   let graph = {};
@@ -43,6 +43,7 @@ function solution(n, edge) {
   return distances.filter((v) => v[1] === MAX_COUNT).length;
 }
 ```
+
 # 풀이
 
 우선 edge들을 가지고 그래프를 만들어 줍니다.
@@ -53,4 +54,3 @@ function solution(n, edge) {
 
 정확성: 100.0
 합계: 100.0 / 100.0
-````
